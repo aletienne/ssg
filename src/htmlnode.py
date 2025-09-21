@@ -30,6 +30,8 @@ class HTMLNode:
         raise Exception(NotImplementedError)
 
     def props_to_html(self):
+        if sefl.props is None:
+            return ""
         rstr=""
         for key in self.props:
             rstr=rstr + f" {key}=\"{self.props[key]}\""
